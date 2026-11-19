@@ -12,12 +12,12 @@ int main(void)
 {
     if (!status_matches(LC_OK, "Success") ||
         !status_matches(LC_ERROR_INVALID_ARGUMENT, "Invalid argument") ||
-        !status_matches(LC_ERROR_OUT_OF_MEMORY, "Out of memory") ||
-        !status_matches(LC_ERROR_OUT_OF_BOUNDS, "Out of bounds") ||
-        !status_matches(LC_ERROR_OVERFLOW, "Overflow") ||
+        !status_matches(LC_ERROR_OUT_OF_MEMORY, "Memory allocation failed") ||
+        !status_matches(LC_ERROR_OUT_OF_BOUNDS, "Index out of bounds") ||
+        !status_matches(LC_ERROR_OVERFLOW, "Arithmetic overflow") ||
         !status_matches(LC_ERROR_NOT_FOUND, "Not found") ||
-        !status_matches(LC_ERROR_UNSUPPORTED, "Unsupported") ||
-        !status_matches((LC_Status)999, "Unknown status"))
+        !status_matches(LC_ERROR_UNSUPPORTED, "Operation unsupported") ||
+        !status_matches((LC_Status)999, "Unknown error"))
     {
         fputs("Status string test failed\n", stderr);
         return 1;
